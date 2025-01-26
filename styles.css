@@ -1,0 +1,98 @@
+:root {
+  /* Light Mode Colors */
+  --primary-color: #4a6fa5;
+  --secondary-color: #c4a77d;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --footer-bg-color: #4a6fa5;
+  --footer-text-color: white;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Colors */
+  --primary-color: #6a8fbf;
+  --secondary-color: #d4b58c;
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --footer-bg-color: #2c3e50;
+  --footer-text-color: #f0f0f0;
+}
+
+/* General Styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2 {
+  color: var(--primary-color);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+}
+
+/* Theme Switch */
+.theme-switch-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  width: 50px;
+  position: relative;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider:before {
+  background-color: white;
+  content: "";
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
